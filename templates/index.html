@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Breast Cancer Prediction{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #ffe6f0; /* Light pink background */
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 2.5rem;
+        color: #d63384;
+    }
+    form {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        text-align: center;
+    }
+    input[type="text"], input[type="submit"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+    input[type="submit"] {
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    h2 {
+        text-align: center;
+        color: #d63384;
+    }
+</style>
+
+<h1>Breast Cancer Detection</h1>
+
+<form method="post">
+    <input type="text" name="radius_mean" placeholder="Radius Mean" required><br>
+    <input type="text" name="texture_mean" placeholder="Texture Mean" required><br>
+    <input type="text" name="perimeter_mean" placeholder="Perimeter Mean" required><br>
+    <input type="text" name="area_mean" placeholder="Area Mean" required><br>
+    <input type="text" name="smoothness_mean" placeholder="Smoothness Mean" required><br>
+    <input type="text" name="compactness_mean" placeholder="Compactness Mean" required><br>
+    <input type="submit" value="Predict">
+</form>
+
+{% if result %}
+    <h2>Result: {{ result }}</h2>
+{% endif %}
+{% endblock %}
+

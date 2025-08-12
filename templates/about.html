@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Breast Cancer Detection{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #ffe6f0;
+        margin: 0;
+        padding: 0;
+    }
+    .center-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+    h1 {
+        color: #d63384;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #333;
+    }
+    .predict-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background-color: #ff4081;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+    }
+    .predict-btn:hover {
+        background-color: #e91e63;
+    }
+    .about-image {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        max-width: 35%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<div class="center-content">
+    <h1>Breast Cancer Detection</h1>
+    <p>
+        Breast cancer detection saves lives by finding cancer early, often before symptoms appear. Early detection makes treatment easier and 
+        more effective, increasing the chances of full recovery. It also means less aggressive treatments, lower medical costs, and a better
+        quality of life for patients. Overall, detecting breast cancer in its early stages is crucial for improving health outcomes and giving 
+        patients the best chance to overcome the disease. <br><br>
+        The model aims to assist healthcare professionals in early diagnosis and treatment planning.
+    </p>
+
+    <!-- 🖼️ Centered Image Above Button -->
+    <img src="{{ url_for('static', filename='images/breast_cancer.jpeg') }}" alt="breast_cancer" class="about-image">
+
+    <!-- 🎯 Predict Button -->
+    <a href="/predict" class="predict-btn">Go to Prediction</a>
+</div>
+
+{% endblock %}
